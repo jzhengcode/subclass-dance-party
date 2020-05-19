@@ -9,7 +9,7 @@ var HoomanDancer = function(verPos, horiPos, timeInBetweenSteps) {
 }
 
 HoomanDancer.prototype = Object.create(MakeDancer.prototype);
-HoomanDancer.prototype.constructor = SquigglyDancer;
+HoomanDancer.prototype.constructor = HoomanDancer;
 
 HoomanDancer.prototype.step = function(){
   // this.$node.fadeOut();
