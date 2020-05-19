@@ -1,14 +1,11 @@
 // Creates and returns a new dancer object that can step
 var MakeDancer = function(verPos, horiPos, timeBetweenSteps) {
 
-  Object.create(MakeDancer.prototype);
-
   this.vertLoc = verPos;
   this.horiLoc = horiPos;
   this.timeBetweenSteps = timeBetweenSteps;
 
   // use jQuery to create an HTML <span> tag
-  debugger;
   this.$node = $('<span class="dancer"></span>');
 
   // dancer.step = function() {
@@ -37,7 +34,7 @@ var MakeDancer = function(verPos, horiPos, timeBetweenSteps) {
 };
 
 MakeDancer.prototype.step = function() {
-  setTimeout(this.step, this.timeBetweenSteps);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
 MakeDancer.prototype.setPosition = function(verPos, horiPos)
