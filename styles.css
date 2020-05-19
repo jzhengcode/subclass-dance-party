@@ -20,8 +20,15 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
+.dancefloor{
+  background-image: url("images/Space.png");
+  height: 1000px;
+}
 .dancer{
   border:10px solid red;
   border-radius:10px;
+  position:absolute;
+}
+.squigglyDancer{
   position:absolute;
 }

@@ -18,6 +18,8 @@ var MakeBlinkyDancer = function(verPos, horiPos, timeBetweenSteps) {
   // };
 
   // return blinkyDancer;
+  this.blink();
+  this.setPosition(verPos, horiPos);
 };
 
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
@@ -26,4 +28,4 @@ MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
 MakeBlinkyDancer.prototype.blink = function() {
   this.step();
   this.$node.toggle();
-}
+};
