@@ -23,6 +23,7 @@ body, a:link, a:visited, a:active{
 .dancefloor{
   background-image: url("images/Space.png");
   height: 1000px;
+  width: auto;
 }
 .dancer{
   border:10px solid red;
@@ -30,5 +31,11 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .squigglyDancer{
+  position:absolute;
+}
+.slimeDancer{
+  position:absolute
+}
+.HoomanDancer{
   position:absolute;
 }
