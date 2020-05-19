@@ -16,11 +16,3 @@ SlimeDancer.prototype.step = function(){
   this.$node.fadeIn();
   MakeDancer.prototype.step.call(this);
 }
-SlimeDancer.prototype.lineUp = function() {
-  //if verPos is greater than 500
-  if (this.verPos >= 500) {
-    this.verPos = 900;
-  } else {
-    this.verPos = 100;
-  }
-}

@@ -1,11 +1,15 @@
 $(document).ready(function() {
   window.dancers = [];
-
-  $('.lineUp').on('click', function(event) {
+  //define lineup function
+   //window.dancer.foreach()
+  window.lineUp = function() {
     window.dancers.forEach(dancer => {
       dancer.lineUp();
     })
-   var goLineUp = $(this).data('lineUp');
+  }
+
+  $('.lineUp').on('click', function(event) {
+    window.lineUp();
   })
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer

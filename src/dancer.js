@@ -46,3 +46,8 @@ MakeDancer.prototype.setPosition = function(verPos, horiPos)
 
   this.$node.css(styleSettings);
 };
+
+//Line up method
+MakeDancer.prototype.lineUp = function() {
+  this.setPosition(100);
+}

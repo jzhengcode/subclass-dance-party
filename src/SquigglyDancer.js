@@ -17,11 +17,3 @@ SquigglyDancer.prototype.step = function(){
   this.$node.slideToggle();
   MakeDancer.prototype.step.call(this);
 }
-SquigglyDancer.prototype.lineUp = function() {
-  //if verPos is greater than 500
-  if (this.verPos >= 500) {
-    this.verPos = 900;
-  } else {
-    this.verPos = 100;
-  }
-}
