@@ -1,35 +1,39 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  // $('img').on("mouseover", function(){
+  //   $('img').css("border-color: blue")
+  // })
 
   //define lineup function
   $('.lineUp').on('click', function(event) {
     window.lineUp();
-  })
+  });
+
   window.lineUp = function() {
     window.dancers.forEach(dancer => {
       dancer.lineUp();
     });
-  }
+  };
 
   // declare a global joinUp
   window.joinUp = function() {
     // iterate through the global dancers
-    for (var i = 0; i < window.dancers.length; i +=2) {
+    for (var i = 0; i < window.dancers.length; i += 2) {
       //if next dancer is undefined
-      if (window.dancers[i +1] === undefined) {
+      if (window.dancers[i + 1] === undefined) {
         //return
         return;
       }
       // alter the setPostition of the next dancer in the array horiPos + 100
-      window.dancers[i].horiLoc = window.dancers[i +1].horiLoc;
-      window.dancers[i].vertLoc = window.dancers[i +1].vertLoc + 100;
+      window.dancers[i].horiLoc = window.dancers[i + 1].horiLoc;
+      window.dancers[i].vertLoc = window.dancers[i + 1].vertLoc + 100;
       //make them dance at the same rhythm
-      window.dancers[i].timeBetweenSteps = window.dancers[i +1].timeBetweenSteps;
+      window.dancers[i].timeBetweenSteps = window.dancers[i + 1].timeBetweenSteps;
     }
   };
+
   $('.joinUp').on('click', function(event) {
-    console.log('Are we running this??');
     window.joinUp();
   });
 
@@ -55,8 +59,8 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);

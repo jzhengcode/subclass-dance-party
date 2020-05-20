@@ -34,7 +34,8 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .slimeDancer{
-  position:absolute
+  position:absolute;
+  /* border: 1px solid red; */
 }
 .HoomanDancer{
   position:absolute;
