@@ -2,6 +2,8 @@ var MakeBlinkyDancer = function(verPos, horiPos, timeBetweenSteps) {
   // var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
 
   MakeDancer.call(this, verPos, horiPos, timeBetweenSteps);
+  this.$node = $('<img class ="blinkyDancer" src="images/KissStar.png" />')
+  //"images/Mr.Swiggles.png" />'
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -19,6 +21,7 @@ var MakeBlinkyDancer = function(verPos, horiPos, timeBetweenSteps) {
 
   // return blinkyDancer;
   // this.setPosition(verPos, horiPos);
+  this.setPosition(verPos,horiPos);
 };
 
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);

@@ -1,16 +1,38 @@
 $(document).ready(function() {
   window.dancers = [];
-  //define lineup function
-   //window.dancer.foreach()
-  window.lineUp = function() {
-    window.dancers.forEach(dancer => {
-      dancer.lineUp();
-    })
-  }
 
+
+  //define lineup function
   $('.lineUp').on('click', function(event) {
     window.lineUp();
   })
+  window.lineUp = function() {
+    window.dancers.forEach(dancer => {
+      dancer.lineUp();
+    });
+  }
+
+  // declare a global joinUp
+  window.joinUp = function() {
+    // iterate through the global dancers
+    for (var i = 0; i < window.dancers.length; i +=2) {
+      //if next dancer is undefined
+      if (window.dancers[i +1] === undefined) {
+        //return
+        return;
+      }
+      // alter the setPostition of the next dancer in the array horiPos + 100
+      window.dancers[i].horiLoc = window.dancers[i +1].horiLoc;
+      window.dancers[i].vertLoc = window.dancers[i +1].vertLoc + 100;
+      //make them dance at the same rhythm
+      window.dancers[i].timeBetweenSteps = window.dancers[i +1].timeBetweenSteps;
+    }
+  };
+  $('.joinUp').on('click', function(event) {
+    console.log('Are we running this??');
+    window.joinUp();
+  });
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
